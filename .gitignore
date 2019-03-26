@@ -21,4 +21,5 @@ gradle-app.setting
 .idea/
 **.iml
 metastore_db/
+spark-warehouse/
 out/

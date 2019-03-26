@@ -59,6 +59,15 @@ object RunApp extends App {
 
       sparkSession.sparkContext.setLogLevel("WARN")
 
+      sparkSession.sql(
+        s"""
+           |CREATE DATABASE IF NOT EXISTS output
+         """.stripMargin)
+
+      sparkSession.catalog.setCurrentDatabase("output")
+
+      println(logSep + s"Current Database: ${sparkSession.catalog.currentDatabase}")
+
       config.example match {
         case Examples.csv => new CSV().run()
         case _ => println("Unsupported example!")

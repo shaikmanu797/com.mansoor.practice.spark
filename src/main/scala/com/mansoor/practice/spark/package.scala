@@ -7,6 +7,8 @@ import org.apache.spark.sql.SparkSession
 
 package object spark {
 
+  val logSep: String = "#"*25
+
   val sparkPropsResource: File = new File(this.getClass.getResource("/spark.properties").getPath)
 
   val appConfig: AppConfig = Resolver.getConfig
