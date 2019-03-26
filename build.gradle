@@ -1,14 +1,42 @@
 plugins {
     id 'idea'
     id 'scala'
+    id 'com.github.spotbugs' version '1.7.1'
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
+}
+
+sourceSets {
+    main {
+        scala {
+            srcDirs = ['src/main/scala']
+        }
+    }
+    test {
+        scala {
+            srcDirs = ['src/test/scala']
+        }
+    }
 }
 
 dependencies {
     compile group: 'org.scala-lang', name: 'scala-library', version: scalaFullVersion
     compile group: 'org.apache.spark', name: 'spark-core_'+scalaBaseVersion, version: sparkVersion
+    compile group: 'com.typesafe', name: 'config', version: typesafeVersion
+    compile group: 'org.apache.spark', name: 'spark-hive_'+scalaBaseVersion, version: sparkVersion
+
+    testCompile group: 'org.scalatest', name: 'scalatest_'+scalaBaseVersion, version: scalaTestVersion
+    testCompile group: 'com.holdenkarau', name: 'spark-testing-base_'+scalaBaseVersion, version: sparkTestVersion
+}
+
+task runApp(type: JavaExec, group: 'practice') {
+    doFirst {
+        println("Starting the application".concat("."*25))
+    }
+    classpath = sourceSets.main.runtimeClasspath
+    main = mainClassFile
+//    jvmArgs ''
+//    args ''
 }
