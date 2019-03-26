@@ -2,6 +2,7 @@ package com.mansoor.practice.spark.config
 
 import com.typesafe.config.{Config, ConfigFactory}
 import scala.collection.JavaConverters._
+import scala.io.Source
 
 object Resolver {
 
@@ -20,14 +21,8 @@ object Resolver {
 
       val appName: String = sparkConf.getString("appName")
       val master: String = sparkConf.getString("master")
-      val conf: Map[String, String] = sparkConf.getStringList("conf").asScala
-        .map(s => {
-          val item: Array[String] = s.split("=", 2)
-          item(0) -> item(1)
-        })
-        .toMap
 
-      SparkConfig(appName, master, conf)
+      SparkConfig(appName, master)
     }
 
     AppConfig(getSparkConf)

@@ -23,8 +23,9 @@ sourceSets {
 
 dependencies {
     compile group: 'org.scala-lang', name: 'scala-library', version: scalaFullVersion
-    compile group: 'org.apache.spark', name: 'spark-core_'+scalaBaseVersion, version: sparkVersion
+    compile group: 'com.github.scopt', name: 'scopt_'+scalaBaseVersion, version: scoptVersion
     compile group: 'com.typesafe', name: 'config', version: typesafeVersion
+    compile group: 'org.apache.spark', name: 'spark-core_'+scalaBaseVersion, version: sparkVersion
     compile group: 'org.apache.spark', name: 'spark-hive_'+scalaBaseVersion, version: sparkVersion
 
     testCompile group: 'org.scalatest', name: 'scalatest_'+scalaBaseVersion, version: scalaTestVersion
