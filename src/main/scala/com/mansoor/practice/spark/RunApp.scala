@@ -2,7 +2,7 @@ package com.mansoor.practice.spark
 
 import com.mansoor.practice.spark.config.{Examples, RuntimeConfig}
 import java.io.File
-import com.mansoor.practice.spark.examples.{CSV, DFBuilder}
+import com.mansoor.practice.spark.examples.{CSV, DFBuilder, UDF}
 import org.apache.spark.SparkConf
 import scopt.OParser
 import org.apache.spark.sql.SparkSession
@@ -71,6 +71,7 @@ object RunApp extends App {
       config.example match {
         case Examples.csv => new CSV().run()
         case Examples.df => new DFBuilder().run()
+        case Examples.udf => new UDF().run()
         case _ => println("Unsupported example!")
       }
     case _ =>
