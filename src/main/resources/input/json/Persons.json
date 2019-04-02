@@ -1,10 +1,22 @@
-{
-  "index": 0,
-  "age": 40,
-  "name": "Rivas Duran",
-  "gender": "male",
-  "company": "NETBOOK",
-  "email": "rivasduran@netbook.com",
-  "phone": "+1 (916) 424-2883",
-  "address": "758 Hubbard Place, Albrightsville, North Carolina, 6702"
-}
+[
+  {
+    "index": 0,
+    "age": 40,
+    "name": "Rivas Duran",
+    "gender": "male",
+    "company": "NETBOOK",
+    "email": "rivasduran@netbook.com",
+    "phone": "+1 (916) 424-2883",
+    "address": "758 Hubbard Place, Albrightsville, North Carolina, 6702"
+  },
+  {
+    "index": 1,
+    "age": 26,
+    "name": "Mansoor Baba Shaik",
+    "gender": "male",
+    "company": "IQVIA Inc.",
+    "email": "mansoor.shaik@iqvia.com",
+    "phone": "+1 (610) 224-2215",
+    "address": "1 IMS Dr, Plymouth Meeting, Pennsylvania, 19462"
+  }
+]
