@@ -2,10 +2,12 @@ package com.mansoor.practice.spark
 
 import com.mansoor.practice.spark.config.{Examples, RuntimeConfig}
 import java.io.File
-import com.mansoor.practice.spark.examples.CSV
+
+import com.mansoor.practice.spark.examples.{CSV, DFBuilder, DSBuilder, UDF}
 import org.apache.spark.SparkConf
 import scopt.OParser
 import org.apache.spark.sql.SparkSession
+
 import scala.io.Source
 
 object RunApp extends App {
@@ -70,6 +72,9 @@ object RunApp extends App {
 
       config.example match {
         case Examples.csv => new CSV().run()
+        case Examples.df => new DFBuilder().run()
+        case Examples.udf => new UDF().run()
+        case Examples.ds => new DSBuilder().run()
         case _ => println("Unsupported example!")
       }
     case _ =>
